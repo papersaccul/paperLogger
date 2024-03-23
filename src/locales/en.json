@@ -1,0 +1,8 @@
+{
+	"ping": {
+		"description": "Bot delay",
+		"title": "Bot delay",
+		"roundtrip": "Round trip delay",
+		"websocket": "Websocket delay"
+	}
+}
