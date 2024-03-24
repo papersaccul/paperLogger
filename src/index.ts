@@ -4,6 +4,8 @@ import { GatewayIntentBits } from "discord.js";
 import loadEnv from './dotenv';
 import { readdirSync } from "fs";
 import { join } from "path";
+import { AppDataSource } from "./utils/dataSource";
+
 
 loadEnv();
 
@@ -18,7 +20,7 @@ const client = new Client({
 });
 
 client.once("ready", async () => {
-    console.log("\n");
+    console.log("\nLoading...");
     await client.initApplicationCommands();
     console.log(`\nLogged in as ${client.user!.tag}`);
 });
@@ -26,6 +28,10 @@ client.once("ready", async () => {
 client.on("interactionCreate", (interaction) => {
     client.executeInteraction(interaction);
 });
+
+AppDataSource.initialize().then(() => {
+    console.log("Data Source has been initialized!");
+}).catch((error) => console.log(error));
 
 function importFiles(dir: string) {
     const files = readdirSync(dir, { withFileTypes: true });

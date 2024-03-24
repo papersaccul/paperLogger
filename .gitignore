@@ -236,3 +236,7 @@ pnpm-lock.yaml
 
 # DS Store
 .DS_Store
+
+# DB
+db/
+db.sqlite

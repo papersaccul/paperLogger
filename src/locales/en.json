@@ -4,5 +4,23 @@
 		"title": "Bot delay",
 		"roundtrip": "Round trip delay",
 		"websocket": "Websocket delay"
+	},
+	"log": {
+		"msg": {
+			"description": "log.msg.description",
+			"channel": {
+				"description": "log.msg.channel.description"
+			},
+			"channelSet": "log.msg.channelSet"
+		},
+		"member": {
+			"description": "log.member.description",
+			"channel": {
+				"description": "log.member.channel.description"
+			}
+		},
+		"group": {
+			"description": "log.group.description"
+		}
 	}
 }
