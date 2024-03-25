@@ -30,6 +30,14 @@
 		"Nickname": "Nickname",
 		"id": "ID: {{id}}",
 		"roles": "Roles"
+	},
+	"messageEvent": {
+		"update": "Message updated",
+		"oldContent": "Old content",
+		"noContent": "No content available",
+		"newContent": "New content",
+		"id": "Message ID: {{id}}",
+		"delete": "Message deleted",
+		"content": "Content"
 	}
 }
-

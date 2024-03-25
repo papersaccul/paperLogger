@@ -8,7 +8,7 @@ export const AppDataSource = new DataSource({
     database: path.join(__dirname, "../db/db.sqlite"),
     entities: [MsgChannel, MemberChannel],
     synchronize: true,
-    logging: true,
+    logging: false,
 });
 
 
