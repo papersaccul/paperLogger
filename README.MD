@@ -11,8 +11,8 @@ npm i
 ## Start
 U need create an `.env.production` or `.env.development` file, to store the `BOT_TOKEN`, `LOCALE`, `GUILD_ID` variable
 ```text
-BOT_TOKEN=YOUBOTTOKEN
-LOCALE=ua
+BOT_TOKEN=YOURBOTTOKEN
+LOCALE=en
 GUILD_ID=111111111111111111       // For single server use
 ```
 u can run it through npm
@@ -36,3 +36,8 @@ Turn on `Server Members Intent` on [Discord Developer Portal](https://discord.co
 # How do I use it?
 - via `/log msg` - select a channel to send deleted or modified messages to
 - via `/log member` - select the channel to send join/leave notifications 
+*Only administrators can use this command*
+
+## It's looks like this
+![image_msg](https://cdn.discordapp.com/attachments/762837041955733554/1221833121838927872/image.png?ex=661403c4&is=66018ec4&hm=c20e39a8818a9f7f55313e67ac7a8f21bdd5ef96b2f05b51c901dbf7cb3f9035&)
+![image_join_leave](https://cdn.discordapp.com/attachments/762837041955733554/1221833400034525285/image.png?ex=66140407&is=66018f07&hm=fe43adb898da03335ccd3423aa482c5a7ac53dd624a559543b74181362e0d96e&)
