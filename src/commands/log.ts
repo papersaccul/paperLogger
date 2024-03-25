@@ -10,8 +10,8 @@ import { IsAdmin } from "../guards/isAdmin";
 @SlashGroup({ name: "log", description: i18n.__("log.group.description") })
 class LogCommand {
 @SlashGroup("log")
+@Guard(IsAdmin)
     @Slash({ name: "msg", description: i18n.__("log.msg.description") })
-    @Guard(IsAdmin)
     async msg(
         @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.msg.channel.description") })
         channel: GuildChannel,
@@ -41,8 +41,8 @@ class LogCommand {
     }
 
 @SlashGroup("log")
+@Guard(IsAdmin)
     @Slash({ name: "member", description: i18n.__("log.member.description") })
-    @Guard(IsAdmin)
     async member(
         @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.member.channel.description") })
         channel: GuildChannel,

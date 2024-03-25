@@ -52,6 +52,7 @@ async function start() {
     importFiles(join(__dirname, "commands"));
     importFiles(join(__dirname, "locales"));
     importFiles(join(__dirname, "events"));
+    importFiles(join(__dirname, "guards"));
     //importFiles(join(__dirname, "utils"));
     
 
