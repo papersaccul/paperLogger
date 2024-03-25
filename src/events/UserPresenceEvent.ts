@@ -1,5 +1,5 @@
-import { GuildMember, EmbedBuilder } from "discord.js";
-import { ArgsOf, Discord, On } from "discordx";
+import { EmbedBuilder } from "discord.js";
+import { ArgsOf, Discord, On, Guard } from "discordx";
 import { AppDataSource } from "../utils/dataSource";
 import { MemberChannel } from "../entities/MemberChannel";
 import { i18n } from "../utils/i18n"; 

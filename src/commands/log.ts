@@ -1,16 +1,17 @@
 import { CommandInteraction, GuildChannel, ApplicationCommandOptionType } from "discord.js";
-import { Discord, Slash, SlashGroup, SlashOption } from "discordx";
-// Импортируйте AppDataSource
+import { Discord, Slash, SlashGroup, SlashOption, Guard} from "discordx";
 import { AppDataSource } from "../utils/dataSource";
 import { MsgChannel } from "../entities/MsgChannel";
 import { MemberChannel } from "../entities/MemberChannel";
 import { i18n } from "../utils/i18n";
+import { IsAdmin } from "../guards/isAdmin";
 
 @Discord()
 @SlashGroup({ name: "log", description: i18n.__("log.group.description") })
 class LogCommand {
 @SlashGroup("log")
     @Slash({ name: "msg", description: i18n.__("log.msg.description") })
+    @Guard(IsAdmin)
     async msg(
         @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.msg.channel.description") })
         channel: GuildChannel,
@@ -41,6 +42,7 @@ class LogCommand {
 
 @SlashGroup("log")
     @Slash({ name: "member", description: i18n.__("log.member.description") })
+    @Guard(IsAdmin)
     async member(
         @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.member.channel.description") })
         channel: GuildChannel,
