@@ -7,20 +7,29 @@
 	},
 	"log": {
 		"msg": {
-			"description": "log.msg.description",
+			"description": "Description of the message log",
 			"channel": {
-				"description": "log.msg.channel.description"
+				"description": "Description of the channel in message log"
 			},
-			"channelSet": "log.msg.channelSet"
+			"channelSet": "Setting the channel in message log"
 		},
 		"member": {
-			"description": "log.member.description",
+			"description": "Description of the member log",
 			"channel": {
-				"description": "log.member.channel.description"
-			}
+				"description": "Description of the channel in member log"
+			},
+			"channelSet": "Setting the channel in member log"
 		},
 		"group": {
-			"description": "log.group.description"
+			"description": "Description of the group log"
 		}
+	},
+	"memberEvent": {
+		"join": "Member joined",
+		"leave": "Member left",
+		"Nickname": "Nickname",
+		"id": "ID: {{id}}",
+		"roles": "Roles"
 	}
 }
+

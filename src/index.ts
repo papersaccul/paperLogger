@@ -15,6 +15,7 @@ const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildMembers
     ],
     botGuilds: botGuilds
 });
@@ -49,8 +50,9 @@ function importFiles(dir: string) {
 async function start() {
     importFiles(join(__dirname, "commands"));
     importFiles(join(__dirname, "locales"));
+    importFiles(join(__dirname, "events"));
     //importFiles(join(__dirname, "utils"));
-    //importFiles(join(__dirname, "events"));
+    
 
 
     await client.login(process.env.BOT_TOKEN as string);
