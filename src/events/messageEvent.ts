@@ -1,5 +1,5 @@
 import { EmbedBuilder } from "discord.js";
-import { ArgsOf, Discord, On } from "discordx";
+import { Discord, ArgsOf, On } from "discordx";
 import { AppDataSource } from "../utils/dataSource";
 import { MsgChannel } from "../entities/MsgChannel";
 import { i18n } from "../utils/i18n";

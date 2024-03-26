@@ -7,21 +7,21 @@
 	},
 	"log": {
 		"msg": {
-			"description": "Description of the message log",
+			"description": "Message log - this is a channel where all deleted and edited messages are logged",
 			"channel": {
-				"description": "Description of the channel in message log"
+				"description": "choose a channel for the message log"
 			},
-			"channelSet": "Setting the channel in message log"
+			"channelSet": "The channel for the message log is set"
 		},
 		"member": {
-			"description": "Description of the member log",
+			"description": "The member log is a channel where all member join and leave events are logged",
 			"channel": {
-				"description": "Description of the channel in member log"
+				"description": "choose a channel for the member log"
 			},
-			"channelSet": "Setting the channel in member log"
+			"channelSet": "The channel for the member log is set"
 		},
 		"group": {
-			"description": "Description of the group log"
+			"description": "Set the channel for logging"
 		}
 	},
 	"memberEvent": {

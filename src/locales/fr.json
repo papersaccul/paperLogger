@@ -1,0 +1,43 @@
+{
+	"ping": {
+		"description": "Délai du bot",
+		"title": "Délai du bot",
+		"roundtrip": "Délai de trajet aller-retour",
+		"websocket": "Délai du websocket"
+	},
+	"log": {
+		"msg": {
+			"description": "Journal des messages - c'est un canal où tous les messages supprimés et modifiés sont enregistrés",
+			"channel": {
+				"description": "choisissez un canal pour le journal des messages"
+			},
+			"channelSet": "Le canal pour le journal des messages est défini"
+		},
+		"member": {
+			"description": "Le journal des membres est un canal où tous les événements d'adhésion et de départ des membres sont enregistrés",
+			"channel": {
+				"description": "choisissez un canal pour le journal des membres"
+			},
+			"channelSet": "Le canal pour le journal des membres est défini"
+		},
+		"group": {
+			"description": "Définir le canal pour l'enregistrement"
+		}
+	},
+	"memberEvent": {
+		"join": "Membre rejoint",
+		"leave": "Membre parti",
+		"Nickname": "Surnom",
+		"id": "ID: {{id}}",
+		"roles": "Rôles"
+	},
+	"messageEvent": {
+		"update": "Message mis à jour",
+		"oldContent": "Ancien contenu",
+		"noContent": "Aucun contenu disponible",
+		"newContent": "Nouveau contenu",
+		"id": "ID du message: {{id}}",
+		"delete": "Message supprimé",
+		"content": "Contenu"
+	}
+}

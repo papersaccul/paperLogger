@@ -1,0 +1,43 @@
+{
+	"ping": {
+		"description": "Retraso del bot",
+		"title": "Retraso del bot",
+		"roundtrip": "Retraso de ida y vuelta",
+		"websocket": "Retraso del websocket"
+	},
+	"log": {
+		"msg": {
+			"description": "Registro de mensajes - este es un canal donde se registran todos los mensajes eliminados y editados",
+			"channel": {
+				"description": "elija un canal para el registro de mensajes"
+			},
+			"channelSet": "Se ha establecido el canal para el registro de mensajes"
+		},
+		"member": {
+			"description": "El registro de miembros es un canal donde se registran todos los eventos de unión y salida de miembros",
+			"channel": {
+				"description": "elija un canal para el registro de miembros"
+			},
+			"channelSet": "Se ha establecido el canal para el registro de miembros"
+		},
+		"group": {
+			"description": "Establecer el canal para el registro"
+		}
+	},
+	"memberEvent": {
+		"join": "Miembro unido",
+		"leave": "Miembro salió",
+		"Nickname": "Apodo",
+		"id": "ID: {{id}}",
+		"roles": "Roles"
+	},
+	"messageEvent": {
+		"update": "Mensaje actualizado",
+		"oldContent": "Contenido antiguo",
+		"noContent": "No hay contenido disponible",
+		"newContent": "Nuevo contenido",
+		"id": "ID del mensaje: {{id}}",
+		"delete": "Mensaje eliminado",
+		"content": "Contenido"
+	}
+}
