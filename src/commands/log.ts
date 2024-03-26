@@ -13,15 +13,16 @@ class LogCommand {
 @Guard(IsAdmin)
     @Slash({ name: "msg", description: i18n.__("log.msg.description") })
     async msg(
-        @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.msg.channel.description") })
-        channel: GuildChannel,
+        @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.msg.channel.description"), required: false })
+        channel: GuildChannel | undefined,
         interaction: CommandInteraction
     ): Promise<void> {
         await interaction.deferReply();
         const guildId = interaction.guildId;
-        const channelId = channel.id;
 
-        if (guildId === null) {
+        const channelId = channel ? channel.id : interaction.channelId;
+
+        if (guildId === null || channelId === null) {
             await interaction.editReply(i18n.__("log.msg.guildOnly"));
             return;
         }
@@ -44,15 +45,16 @@ class LogCommand {
 @Guard(IsAdmin)
     @Slash({ name: "member", description: i18n.__("log.member.description") })
     async member(
-        @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.member.channel.description") })
-        channel: GuildChannel,
+        @SlashOption({ name: "channel", type: ApplicationCommandOptionType.Channel, description: i18n.__("log.member.channel.description"), required: false })
+        channel: GuildChannel | undefined,
         interaction: CommandInteraction
     ): Promise<void> {
         await interaction.deferReply();
         const guildId = interaction.guildId;
-        const channelId = channel.id;
 
-        if (guildId === null) {
+        const channelId = channel ? channel.id : interaction.channelId;
+
+        if (guildId === null || channelId === null) {
             await interaction.editReply(i18n.__("log.member.guildOnly"));
             return;
         }
