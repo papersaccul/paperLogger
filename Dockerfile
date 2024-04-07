@@ -1,7 +1,7 @@
 ARG NODE_VERSION=18.18.2-slim
 FROM node:${NODE_VERSION} as base
 
-ENV USER=paperWhitelist
+ENV USER=paperwhitelist
 
 WORKDIR /app
 COPY package*.json .

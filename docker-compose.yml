@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   bot:
-    image: ghcr.io/paper_sacculos/paperLogger:latest
+    image: ghcr.io/papersaccul/paperlogger:latest
     restart: 'on-failure'
     env_file: .env.production
     environment:

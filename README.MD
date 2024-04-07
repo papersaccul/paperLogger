@@ -3,7 +3,7 @@ Log join/leave and delete/edit messages
 
 ## install
 ```sh
-git clone https://github.com/papersaccul/paperLogger
+git clone https://github.com/papersaccul/paperlogger
 cd paperLogger
 npm i
 ```
