@@ -30,18 +30,30 @@ abstract class MessageEvent {
             return;
         }
 
-        const embed = new EmbedBuilder()
-            .setTitle(i18n.__("messageEvent.update", { tag: newMessage.author?.tag || i18n.__("messageEvent.unknownUser") }))
-            .setColor("#ffa500")
-            .setAuthor({ name: newMessage.author.tag, iconURL: newMessage.author.displayAvatarURL() }) 
-            .addFields(
-                { name: i18n.__("messageEvent.oldContent"), value: oldMessage.content || i18n.__("messageEvent.noContent") },
-                { name: i18n.__("messageEvent.newContent"), value: newMessage.content || i18n.__("messageEvent.noContent") }
-            )
-            .setFooter({ text: i18n.__("messageEvent.id", { id: newMessage.id }) });
-        await channel.send({ embeds: [embed] });
-    }
+        const oldContent = oldMessage.content || i18n.__("messageEvent.noContent");
+        const newContent = newMessage.content || i18n.__("messageEvent.noContent");
 
+        const combinedContent = "### " + i18n.__("messageEvent.oldContent") + "\n" + oldContent + "\n\n### " + i18n.__("messageEvent.newContent") + "\n" + newContent;
+
+        const parts = combinedContent.match(/[\s\S]{1,4096}/g) || []; 
+
+        for (let i = 0; i < parts.length; i++) {
+            const embed = new EmbedBuilder()
+                .setColor("#ffa500")
+                .setDescription(parts[i]);
+
+            if (i === 0) {
+                embed.setTitle(i18n.__("messageEvent.update", { tag: newMessage.author?.tag || i18n.__("messageEvent.unknownUser") }))
+                     .setAuthor({ name: newMessage.author?.tag || i18n.__("messageEvent.unknownUser"), iconURL: newMessage.author?.displayAvatarURL() });
+            }
+
+            if (i === parts.length - 1) {
+                embed.setFooter({ text: i18n.__("messageEvent.id", { id: newMessage.id }) });
+            }
+
+            await channel.send({ embeds: [embed] });
+        }
+    }
     @On({ event: "messageDelete" })
     private async onMessageDelete([message]: ArgsOf<"messageDelete">): Promise<void> {
         if (!message.guildId) return;
@@ -62,12 +74,15 @@ abstract class MessageEvent {
             return;
         }
 
+        const content = message.content || i18n.__("messageEvent.noContent");
+
         const embed = new EmbedBuilder()
             .setTitle(i18n.__("messageEvent.delete", { tag: message.author?.tag || i18n.__("messageEvent.unknownUser") }))
             .setColor("#ff0000")
-            .setAuthor({ name: message.author?.tag || i18n.__("messageEvent.unknownUser"), iconURL: message.author?.displayAvatarURL() }) 
-            .addFields({ name: i18n.__("messageEvent.content"), value: message.content || i18n.__("messageEvent.noContent") })
+            .setAuthor({ name: message.author?.tag || i18n.__("messageEvent.unknownUser"), iconURL: message.author?.displayAvatarURL() })
+            .setDescription(content)
             .setFooter({ text: i18n.__("messageEvent.id", { id: message.id }) });
+
         await channel.send({ embeds: [embed] });
     }
 }
