@@ -1,6 +1,6 @@
 {
   "name": "paperlogger",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Discord logging bot",
   "scripts": {
     "build": "tsc",

@@ -33,7 +33,7 @@ abstract class MemberEvent {
             .setTitle(i18n.__("memberEvent.join", { tag: member.user.tag })) 
             .setColor("#00ff00")
             .setThumbnail(member.user.displayAvatarURL())
-            .addFields({ name: i18n.__("memberEvent.Nickname"), value: member.toString() }) 
+            .addFields({ name: i18n.__("memberEvent.Nickname"), value: `${member.toString()} (${member.user.tag})` }) // Modified line to include Discord tag in text form
             .setFooter({ text: i18n.__("memberEvent.id", { id: member.id }) });
         await channel.send({ embeds: [embed] });
     }
@@ -63,7 +63,7 @@ abstract class MemberEvent {
                 .setColor("#ff0000")
                 .setThumbnail(member.user.displayAvatarURL())
                 .addFields(
-                    { name: i18n.__("memberEvent.Nickname"), value: member.toString() },
+                    { name: i18n.__("memberEvent.Nickname"), value: `${member.toString()} (${member.user.tag})` }, // Modified line to include Discord tag in text form
                     { name: i18n.__("memberEvent.roles"), value: roles.length > 0 ? roles : i18n.__("memberEvent.noRoles") }
                 )
                 .setFooter({ text: i18n.__("memberEvent.id", { id: member.id }) });
